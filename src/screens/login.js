@@ -112,30 +112,33 @@ class LoginScreen extends React.Component {
   // Return rendered layout.
   render() {
     return (
-      <ScrollView style={ StyleGlobal.container }>
+      <ScrollView style={ StyleGlobal.container_login }>
         { Platform.OS === 'web' ? [] : <Spinner visible={ this.state.is_loading } /> }
-        <ImageBackground source={ require('../images/app-bg.png') } style={ {flex: 1, resizeMode: 'cover', width: Dimensions.get('window').width, height: Dimensions.get('window').height} }>
+        <ImageBackground source={ require('../images/app-bg.png') } style={ {flex: 1, resizeMode: 'cover', width: Dimensions.get('window').width, height: '900'} }>
           { /* Screen header */ }
-          <View>
-            <Text>{ Settings.title }</Text>
+          <View style={StyleGlobal.wapper_title_login}>
+            <Text style={StyleGlobal.login_title}>{ Settings.title }</Text>
+            <Text style={StyleGlobal.border_white}></Text>
+            <Text style={StyleGlobal.border_gray}></Text>
+            <Text style={StyleGlobal.border_white}></Text>
           </View>
 
           {/* Login panel */ }
-          <View>
-            <TextInput style={ StyleGlobal.input_text} placeholder="Branch Code" value={ this.state.branch_code } onChangeText={ (branch_code) => this.setState({ branch_code: branch_code }) } />
-            <TextInput style={ StyleGlobal.input_text} placeholder="Username" value={ this.state.username } onChangeText={ (username) => this.setState({ username: username }) } />
-            <TextInput style={ StyleGlobal.input_text} placeholder="Password" value={ this.state.password } onChangeText={ (password) => this.setState({ password: password }) } secureTextEntry />
+          <View style={ StyleGlobal.wapper_input}>
+            <TextInput placeholderTextColor={'d0d0d1'} style={ StyleGlobal.input_text} placeholder="Branch Code" value={ this.state.branch_code } onChangeText={ (branch_code) => this.setState({ branch_code: branch_code }) } />
+            <TextInput placeholderTextColor={'d0d0d1'} style={ StyleGlobal.input_text} placeholder="Username" value={ this.state.username } onChangeText={ (username) => this.setState({ username: username }) } />
+            <TextInput placeholderTextColor={'d0d0d1'} style={ StyleGlobal.input_text} placeholder="Password" value={ this.state.password } onChangeText={ (password) => this.setState({ password: password }) } secureTextEntry />
 
             <TouchableOpacity onPress={ () => this.login() } style={ [StyleGlobal.button, StyleGlobal.button_primary] }>
               <Text style={ StyleGlobal.button_primary_text }>Login</Text>
             </TouchableOpacity>
 
-            <Text>Please be reminded to login daily!</Text>
+            <Text style={ StyleGlobal.login_note}>Please be reminded to login daily!</Text>
           </View>
 
           { /* Footer */ }
           <View>
-            <Text>{ Settings.copyright }</Text>
+            <Text style={ StyleGlobal.copyright}>{ Settings.copyright }</Text>
           </View>
         </ImageBackground>
       </ScrollView>

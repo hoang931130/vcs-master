@@ -40,5 +40,7 @@
   "jest": {
     "preset": "react-native"
   },
-  "private": true
+  "private": true,
+  "name": "vcs-master",
+  "version": "1.0.0"
 }

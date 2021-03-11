@@ -1,4 +1,4 @@
-package com.vcs;
+package com.hoang961130.VCS;
 
 import android.os.Bundle;
 
