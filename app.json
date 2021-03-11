@@ -1,0 +1,12 @@
+{
+  "name": "VCS",
+  "displayName": "VCS",
+  "expo": {
+    "name": "VCS",
+    "slug": "VCS",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
