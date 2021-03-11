@@ -50,7 +50,6 @@ module.exports = StyleSheet.create({
     paddingTop: 40,
     textAlign: 'center',
   },
-  
   // copyright
   copyright: {
     position: 'absolute',
